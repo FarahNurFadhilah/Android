@@ -1,6 +1,8 @@
 package com.farah.counter;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,6 +12,8 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
+    int count = 0;
+    TextView tvHasil;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,5 +24,20 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        load();
+    }
+
+    public void load(){
+        tvHasil = findViewById(R.id.tvHasil);
+    }
+
+    public void btnUp(View view) {
+        count++;
+        tvHasil.setText(count+"");
+    }
+
+    public void btnDown(View view) {
+        count--;
+        tvHasil.setText(count+"");
     }
 }
