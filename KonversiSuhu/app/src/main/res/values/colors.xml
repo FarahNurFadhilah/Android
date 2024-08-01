@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="pink">#e040fb</color>
-    <color name="ungu">#673ab7</color>
     <color name="bts">#9c27b0</color>
+    <color name="ungu">#7b1fa2</color>
+    <color name="lilac">#7C4DFF</color>
 </resources>

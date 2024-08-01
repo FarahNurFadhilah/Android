@@ -19,9 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Kalkulator"
-include(":app")
-include(":app")
-include(":app")
+rootProject.name = "KonversiSuhu"
 include(":app")
  
