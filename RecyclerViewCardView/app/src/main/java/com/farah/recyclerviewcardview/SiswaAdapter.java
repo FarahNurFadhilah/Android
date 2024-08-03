@@ -1,9 +1,8 @@
 package com.farah.recyclerviewcardview;
 
+import android.content.Context;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,7 +30,7 @@ public class SiswaAdapter extends RecyclerView.Adapter<SiswaAdapter.ViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Siswa siswa = siswaList.get(int);
+        Siswa siswa = siswaList.get(position);
         holder.tvNama.setText(siswa.getNama());
         holder.tvAlamat.setText(siswa.getAlamat());
     }
