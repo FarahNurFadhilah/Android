@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -33,6 +34,13 @@ public class SiswaAdapter extends RecyclerView.Adapter<SiswaAdapter.ViewHolder> 
         Siswa siswa = siswaList.get(position);
         holder.tvNama.setText(siswa.getNama());
         holder.tvAlamat.setText(siswa.getAlamat());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(context, "Nama: "+siswa.getNama() + "Alamat:"+siswa.getAlamat(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override
