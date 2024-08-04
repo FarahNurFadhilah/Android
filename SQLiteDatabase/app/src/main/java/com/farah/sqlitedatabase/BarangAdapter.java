@@ -2,9 +2,12 @@ package com.farah.sqlitedatabase;
 
 import android.content.Context;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.PopupMenu;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -33,6 +36,30 @@ public class BarangAdapter extends RecyclerView.Adapter<BarangAdapter.ViewHolder
         holder.tvBarang.setText(barangList.get(position).getBarang());
         holder.tvStok.setText(barangList.get(position).getStok());
         holder.tvHarga.setText(barangList.get(position).getHarga());
+
+        holder.tvMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                PopupMenu popupMenu = new PopupMenu(context, holder.tvMenu);
+                popupMenu.inflate(R.menu.menu_item);
+
+                popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem menuItem) {
+
+                        int itemId = menuItem.getItemId();
+                        if (itemId == R.id.ubah) {
+                            Toast.makeText(context, "UBAH", Toast.LENGTH_SHORT).show();
+                        }else  if (itemId == R.id.hapus){
+                            Toast.makeText(context, "HAPUS", Toast.LENGTH_SHORT).show();
+                        }
+                        return false;
+                    }
+                });
+                popupMenu.show();
+            }
+        });
     }
 
     @Override
